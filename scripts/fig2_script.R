@@ -52,13 +52,13 @@ mc_dat <- dat1 |>
          question_id = factor(question_id,
                               levels = c("q3", "q7", "q10", "q13")))
 
-question_labs <- c("Non-interaction\nas stewardship",
-                   "Stewardship\nwithout care",
-                   "Stewardship\nwithout agency",
-                   "Action vs outcome")
+question_labs <- c("Non-interaction\nas stewardship (3.1)",
+                   "Stewardship\nwithout care (3.2)",
+                   "Stewardship\nwithout agency (3.3)",
+                   "Action vs outcome (3.4)")
 
 figname <- "Figure 2.png"
-png(paste(figdir, figname, sep = "/"), width = 12, height = 7, units = "in", res = 1000)
+png(paste(figdir, figname, sep = "/"), width = 12, height = 7, units = "in", res = 500)
 
 
 ggplot(mc_dat, aes(x = question_id, y = responseid, fill = response))+
@@ -78,3 +78,4 @@ ggplot(mc_dat, aes(x = question_id, y = responseid, fill = response))+
 
 dev.off()
 graphics.off()
+
